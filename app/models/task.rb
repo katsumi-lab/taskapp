@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+
   before_validation :set_nameless_name
 
   validates :name, presence: true
@@ -16,4 +17,5 @@ class Task < ApplicationRecord
   def set_nameless_name
     self.name = '名前なし' if name.blank?
   end
+
 end
